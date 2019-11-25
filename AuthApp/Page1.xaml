@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AuthApp.Page1"
+             x:Name="WeatherPage"
+             BackgroundImageSource="weather.jpg">
+    <ContentPage.Content>
+        <StackLayout>
+           
+            <Label Text="Welcome to the Cape Town Weather Service" HorizontalOptions="Center"
+                   FontSize="Large"
+                   />
+
+            <ContentView>
+                <Label x:Name="y" Text="Cape Town, Western Cape" HorizontalOptions="Center" FontSize="23" TextColor="White"/>
+            </ContentView>
+
+
+            <FlexLayout AlignContent="SpaceBetween" FlowDirection="LeftToRight">
+                <Image x:Name="sunny" Grid.Row="0"></Image>
+                <Label x:Name="temp" Grid.Row="1" Margin="60"/>
+                <Switch x:Name="switch" IsEnabled="True" Toggled="switch_Toggled" />
+
+            </FlexLayout>
+
+            <Slider ValueChanged="Slider_ValueChanged" x:Name="Slider"/>
+            <Label x:Name="SliderLabel" />
+
+            <ContentView Padding="18">
+                <Label x:Name="Label" Text="Daily Temperatures" HorizontalTextAlignment="Start" FontSize="23" TextColor="White"/>
+            </ContentView>
+
+
+
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100" />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+
+
+                </Grid.RowDefinitions>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
+
+                    <ContentView BackgroundColor="Red" Padding="25">
+                        <Label Text="Mon" Grid.Row="0" />
+                    </ContentView>
+
+                    <ContentView BackgroundColor="Green" Padding="25">
+                        <Label Text="Tue" Grid.Row="1"/>
+                    </ContentView>
+                    <ContentView BackgroundColor="Black" Padding="25">
+                        <Label Text="Wed" Grid.Row="2"/>
+                    </ContentView>
+                    <ContentView BackgroundColor="Blue" Padding="25">
+                        <Label Text="Thu" Grid.Row="3"/>
+                    </ContentView>
+                    <ContentView BackgroundColor="Aqua" Padding="25">
+                        <Label Text="Frid" Grid.Row="4"/>
+                    </ContentView>
+                </StackLayout>
+            </Grid>
+
+
+
+            <Button Text="Display Weather" CornerRadius="20" Clicked="Button_Clicked" />
+
+
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
